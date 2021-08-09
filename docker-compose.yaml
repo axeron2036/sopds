@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    db:
+        image: postgres:12.2
+        volumes:
+            - ./data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        env_file:
+        - ./.env
+    
+    sopds:
+        build: ./src
+        volumes:
+            - ./library:/library:ro
+            - ./src:/sopds
+        ports:
+            - "8081:8001"
+        env_file:
+            - ./.env
+      
