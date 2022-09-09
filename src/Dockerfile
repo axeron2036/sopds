@@ -15,8 +15,8 @@ ADD scripts/fb2conv /fb2conv
 RUN mkdir -p /sopds/convert/fb2c
 COPY requirements.txt /sopds/
 
-RUN cp /usr/share/zoneinfo/Asia/Yakutsk /etc/localtime
-RUN echo "Asia/Yakutsk" > /etc/timezone
+RUN cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+RUN echo "Europe/Moscow" > /etc/timezone
 
 RUN pip3 install --upgrade -r requirements.txt 
 
